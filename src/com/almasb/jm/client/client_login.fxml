@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
+   <children>
+      <Label text="Enter IP address" />
+      <TextField fx:id="fieldIP" text="127.0.0.1" />
+      <Button mnemonicParsing="false" onAction="#connect" text="Connect" />
+   </children>
+</VBox>
