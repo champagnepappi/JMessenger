@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
    <children>
       <Label text="Enter IP address" />
       <TextField fx:id="fieldIP" text="127.0.0.1" />

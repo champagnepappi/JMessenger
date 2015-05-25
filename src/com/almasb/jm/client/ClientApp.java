@@ -40,7 +40,7 @@ public class ClientApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         scene = new Scene(rootLogin);
 
-        primaryStage.setOnCloseRequest(event -> client.close());
+        //primaryStage.setOnCloseRequest(event -> client.close());
         primaryStage.setTitle("JMessenger");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -52,13 +52,13 @@ public class ClientApp extends Application {
 
     public void connect(String host) {
         try {
-            client = Network.connectToServer(Config.NAME, Config.VERSION, host, Config.TCP_PORT, Config.UDP_PORT);
-            handlers.forEach(handler -> client.addMessageListener(handler, DataMessage.class));
-            client.start();
+//            client = Network.connectToServer(Config.NAME, Config.VERSION, host, Config.TCP_PORT, Config.UDP_PORT);
+//            handlers.forEach(handler -> client.addMessageListener(handler, DataMessage.class));
+//            client.start();
 
             scene.setRoot(rootUI);
         }
-        catch (IOException e) {
+        catch (Exception e) {
             e.printStackTrace();
         }
     }

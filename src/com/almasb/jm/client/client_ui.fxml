@@ -5,11 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
+<?import com.almasb.jm.client.ui.*?>
+<?import com.almasb.jm.client.ui.MessagePane?>
+
 <BorderPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientUIController">
-   <center>
-      <TextArea fx:id="areaInfo" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
    <bottom>
       <TextField fx:id="fieldMessage" onAction="#send" BorderPane.alignment="CENTER" />
    </bottom>
+   <center>
+      <MessagePane fx:id="messagePane">
+      
+      </MessagePane>
+   </center>
+   <right>
+      <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>
