@@ -8,7 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="350.0" prefWidth="400.0" spacing="25.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
+<StackPane prefHeight="350.0" prefWidth="400.0" alignment="center" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
+    
+    <VBox spacing="25" alignment="center">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
@@ -45,44 +47,41 @@
             <Insets left="30.0" right="30.0" />
          </VBox.margin>
       </PasswordField>
-      <GridPane alignment="TOP_RIGHT">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="298.0" minWidth="10.0" prefWidth="181.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="298.0" minWidth="10.0" prefWidth="87.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="74.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
          <children>
-            <Button fx:id="btnSignIn" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: blue;" 
-                text="Sign in" textFill="WHITE" GridPane.columnIndex="2"
-                disable="${email.text.empty || password.text.empty}">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-            <CheckBox mnemonicParsing="false" text="Remember me">
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </CheckBox>
-            <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: blue;" 
-                text="Sign up" textFill="WHITE" GridPane.columnIndex="1"
-                disable="${email.text.empty || password.text.empty}">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
+	            <CheckBox mnemonicParsing="false" text="Remember me">
+	               <font>
+	                  <Font size="16.0" />
+	               </font>
+	            </CheckBox>
+
+                <Button fx:id="btnSignUp" disable="${email.text.empty || password.text.empty}" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: blue;" text="Sign up" textFill="WHITE" GridPane.columnIndex="1">
+                   <font>
+                      <Font name="System Bold" size="16.0" />
+                   </font>
+                </Button>
+                <Button fx:id="btnSignIn" disable="${email.text.empty || password.text.empty}" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: blue;" text="Sign in" textFill="WHITE" GridPane.columnIndex="2">
+                   <font>
+                      <Font name="System Bold" size="16.0" />
+                   </font>
+                </Button>
          </children>
-         <padding>
-            <Insets left="30.0" right="30.0" />
-         </padding>
-      </GridPane>
+            <VBox.margin>
+               <Insets left="30.0" right="25.0" />
+            </VBox.margin>
+      </HBox>
+      
+      <Label fx:id="error" textFill="red">
+           <font>
+              <Font name="System Bold" size="16.0" />
+           </font>
+      </Label>
    </children>
-</VBox>
+   </VBox>
+   
+   <Region fx:id="veil" prefWidth="400" prefHeight="350" style="-fx-background-color: rgba(0, 0, 0, 0.4);" visible="false" />
+   
+   <ProgressIndicator fx:id="progress" maxWidth="50" maxHeight="50" style="-fx-accent: rgba(255, 255, 255, 1);" visible="false" />
+   
+</StackPane>
