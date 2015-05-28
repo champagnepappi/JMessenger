@@ -12,7 +12,7 @@ import com.almasb.jm.common.DataMessage;
 
 public class ClientUIController {
 
-    private ClientApp app;
+    private JMessengerApp app;
 
     @FXML
     private MessagePane messagePane;
@@ -21,7 +21,7 @@ public class ClientUIController {
     @FXML
     private ListView<Node> users;
 
-    public void setApp(ClientApp app) {
+    public void setApp(JMessengerApp app) {
         this.app = app;
         app.registerMessageHandler((source, message) -> {
             Platform.runLater(() -> messagePane.appendMessage((DataMessage)message));

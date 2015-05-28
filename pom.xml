@@ -22,6 +22,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>io.orchestrate</groupId>
+			<artifactId>orchestrate-client</artifactId>
+			<version>0.10.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.jme3</groupId>
 			<artifactId>jme3-networking</artifactId>
 			<version>3.0.10</version>

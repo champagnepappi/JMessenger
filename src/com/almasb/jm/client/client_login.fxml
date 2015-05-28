@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
+<VBox prefHeight="350.0" prefWidth="400.0" spacing="25.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.jm.client.ClientLoginController">
    <children>
-      <Label text="Enter IP address" />
-      <TextField fx:id="fieldIP" text="127.0.0.1" />
-      <Button mnemonicParsing="false" onAction="#connect" text="Connect" />
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label style="-fx-background-color: white;" text="Sign in">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label style="-fx-background-color: white;" text="JMessenger">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="65.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <TextField fx:id="email" promptText="Email">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" />
+         </VBox.margin></TextField>
+      <PasswordField fx:id="password" promptText="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" />
+         </VBox.margin>
+      </PasswordField>
+      <GridPane alignment="TOP_RIGHT">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="298.0" minWidth="10.0" prefWidth="181.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="298.0" minWidth="10.0" prefWidth="87.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="74.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnSignIn" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: blue;" 
+                text="Sign in" textFill="WHITE" GridPane.columnIndex="2"
+                disable="${email.text.empty || password.text.empty}">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <CheckBox mnemonicParsing="false" text="Remember me">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </CheckBox>
+            <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: blue;" 
+                text="Sign up" textFill="WHITE" GridPane.columnIndex="1"
+                disable="${email.text.empty || password.text.empty}">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </GridPane>
    </children>
 </VBox>
