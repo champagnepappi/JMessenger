@@ -1,5 +1,6 @@
 package com.almasb.jm.common;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
@@ -41,7 +42,7 @@ public class Account {
         return port;
     }
     public List<String> getFriends() {
-        return friends;
+        return new ArrayList<>(friends);
     }
 
     public void setFriends(List<String> friends) {
@@ -61,6 +62,10 @@ public class Account {
     }
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public void addFriend(String email) {
+        friends.add(email);
     }
 
     @Override

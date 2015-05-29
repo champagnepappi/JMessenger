@@ -7,12 +7,14 @@ import com.jme3.network.serializing.Serializable;
 public class DataMessage extends AbstractMessage {
     private String name;
     private String message;
+    private String email;
 
     public DataMessage() {
     }
 
-    public DataMessage(String name, String message) {
+    public DataMessage(String name, String email, String message) {
         setName(name);
+        setEmail(email);
         setMessage(message);
     }
 
@@ -30,6 +32,14 @@ public class DataMessage extends AbstractMessage {
 
     public String getMessage() {
         return message;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

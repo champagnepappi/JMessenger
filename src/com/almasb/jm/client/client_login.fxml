@@ -38,7 +38,8 @@
          </font>
          <VBox.margin>
             <Insets left="30.0" right="30.0" />
-         </VBox.margin></TextField>
+         </VBox.margin>
+      </TextField>
       <PasswordField fx:id="password" promptText="Password">
          <font>
             <Font size="16.0" />
@@ -47,6 +48,14 @@
             <Insets left="30.0" right="30.0" />
          </VBox.margin>
       </PasswordField>
+      <TextField fx:id="name" promptText="Display Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" />
+         </VBox.margin>
+      </TextField>
       
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
          <children>
@@ -56,12 +65,12 @@
 	               </font>
 	            </CheckBox>
 
-                <Button fx:id="btnSignUp" disable="${email.text.empty || password.text.empty}" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: blue;" text="Sign up" textFill="WHITE" GridPane.columnIndex="1">
+                <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: blue;" text="Sign up" textFill="WHITE" GridPane.columnIndex="1">
                    <font>
                       <Font name="System Bold" size="16.0" />
                    </font>
                 </Button>
-                <Button fx:id="btnSignIn" disable="${email.text.empty || password.text.empty}" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: blue;" text="Sign in" textFill="WHITE" GridPane.columnIndex="2">
+                <Button fx:id="btnSignIn" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: blue;" text="Sign in" textFill="WHITE" GridPane.columnIndex="2">
                    <font>
                       <Font name="System Bold" size="16.0" />
                    </font>
@@ -72,7 +81,7 @@
             </VBox.margin>
       </HBox>
       
-      <Label fx:id="error" textFill="red">
+      <Label fx:id="message" textFill="blue">
            <font>
               <Font name="System Bold" size="16.0" />
            </font>

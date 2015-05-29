@@ -18,6 +18,10 @@
       </MessagePane>
    </center>
    <right>
-      <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <VBox>
+          <ListView fx:id="users" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+          <TextField fx:id="fieldAddUser" onAction="#addUser" />
+      </VBox>
+      
    </right>
 </BorderPane>

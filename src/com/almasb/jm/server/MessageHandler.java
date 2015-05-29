@@ -9,14 +9,11 @@ public class MessageHandler implements MessageListener<HostedConnection> {
     @Override
     public void messageReceived(HostedConnection source, Message m) {
         if (m instanceof DataMessage) {
-            source.setAttribute("name", ((DataMessage) m).getName());
+            source.setAttribute("email", ((DataMessage) m).getEmail());
 
             System.out.println("Received: " + m);
 
-            source.getServer().broadcast(m);
-        }
-        else {
-            System.out.println("Received odd message: " + m);
+            //source.getServer().broadcast(m);
         }
     }
 }

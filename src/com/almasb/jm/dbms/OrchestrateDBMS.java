@@ -49,8 +49,7 @@ public class OrchestrateDBMS implements DBMS {
 
     @Override
     public boolean updateEntry(Account account) {
-        // TODO Auto-generated method stub
-        return false;
+        return addEntry(account);
     }
 
     @Override
